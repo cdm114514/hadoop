@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <mkdir dir="/home/demingchu/java_projects/hadoop-2.7.1-src/hadoop-common-project/hadoop-kms/target/test-classes/kms-webapp"/>
+  <copy todir="/home/demingchu/java_projects/hadoop-2.7.1-src/hadoop-common-project/hadoop-kms/target/test-classes/kms-webapp">
+    <fileset dir="/home/demingchu/java_projects/hadoop-2.7.1-src/hadoop-common-project/hadoop-kms/src/main/webapp"/>
+  </copy>
+</target>
+</project>

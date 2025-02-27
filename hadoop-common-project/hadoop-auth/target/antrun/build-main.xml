@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <mkdir dir="/home/demingchu/java_projects/hadoop-2.7.1-src/hadoop-common-project/hadoop-auth/target/test-dir"/>
+  <mkdir dir="/home/demingchu/java_projects/hadoop-2.7.1-src/hadoop-common-project/hadoop-auth/target/test-dir"/>
+</target>
+</project>

@@ -1,0 +1,8 @@
+/home/demingchu/java_projects/hadoop-2.7.1-src/hadoop-common-project/hadoop-annotations/src/main/java/org/apache/hadoop/classification/tools/StabilityOptions.java
+/home/demingchu/java_projects/hadoop-2.7.1-src/hadoop-common-project/hadoop-annotations/src/main/java/org/apache/hadoop/classification/InterfaceStability.java
+/home/demingchu/java_projects/hadoop-2.7.1-src/hadoop-common-project/hadoop-annotations/src/main/java/org/apache/hadoop/classification/tools/ExcludePrivateAnnotationsStandardDoclet.java
+/home/demingchu/java_projects/hadoop-2.7.1-src/hadoop-common-project/hadoop-annotations/src/main/java/org/apache/hadoop/classification/tools/RootDocProcessor.java
+/home/demingchu/java_projects/hadoop-2.7.1-src/hadoop-common-project/hadoop-annotations/src/main/java/org/apache/hadoop/classification/tools/ExcludePrivateAnnotationsJDiffDoclet.java
+/home/demingchu/java_projects/hadoop-2.7.1-src/hadoop-common-project/hadoop-annotations/src/main/java/org/apache/hadoop/classification/tools/IncludePublicAnnotationsStandardDoclet.java
+/home/demingchu/java_projects/hadoop-2.7.1-src/hadoop-common-project/hadoop-annotations/src/main/java/org/apache/hadoop/classification/tools/package-info.java
+/home/demingchu/java_projects/hadoop-2.7.1-src/hadoop-common-project/hadoop-annotations/src/main/java/org/apache/hadoop/classification/InterfaceAudience.java
