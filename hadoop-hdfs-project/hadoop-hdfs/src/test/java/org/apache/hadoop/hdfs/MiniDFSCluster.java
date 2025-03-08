@@ -46,11 +46,7 @@ import static org.apache.hadoop.hdfs.DFSConfigKeys.DFS_NAMESERVICE_ID;
 import static org.apache.hadoop.hdfs.DFSConfigKeys.DFS_REPLICATION_KEY;
 import static org.apache.hadoop.hdfs.server.common.Util.fileAsURI;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.RandomAccessFile;
+import java.io.*;
 import java.net.InetSocketAddress;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -105,6 +101,7 @@ import org.apache.hadoop.hdfs.server.namenode.NameNodeAdapter;
 import org.apache.hadoop.hdfs.server.protocol.DatanodeStorage;
 import org.apache.hadoop.hdfs.server.protocol.NamenodeProtocols;
 import org.apache.hadoop.hdfs.tools.DFSAdmin;
+import org.apache.hadoop.hdfs.tools.DFSck;
 import org.apache.hadoop.hdfs.web.HftpFileSystem;
 import org.apache.hadoop.metrics2.lib.DefaultMetricsSystem;
 import org.apache.hadoop.net.DNSToSwitchMapping;
@@ -1708,7 +1705,25 @@ public class MiniDFSCluster {
   /**
    * Shutdown all the nodes in the cluster.
    */
-  public void shutdown(boolean deleteDfsDir) {
+  public void shutdown(boolean deleteDfsDir)
+  {
+    // Deming: add consistency check here
+    ByteArrayOutputStream bStream = new ByteArrayOutputStream();
+    PrintStream out = new PrintStream(bStream, true);
+    int errCode = 0;
+    try
+    {
+        errCode = ToolRunner.run(new DFSck(conf, out), new String[]{"/"});
+    } catch (Exception e)
+    {
+        throw new RuntimeException(e);
+    }
+    String result = bStream.toString();
+    //use log.info to make sure the result is printed out
+    LOG.info("errCode from fsck: " + errCode);
+    LOG.info("output from fsck:\n" + result);
+
+
     LOG.info("Shutting down the Mini HDFS Cluster");
     if (checkExitOnShutdown)  {
       if (ExitUtil.terminateCalled()) {
