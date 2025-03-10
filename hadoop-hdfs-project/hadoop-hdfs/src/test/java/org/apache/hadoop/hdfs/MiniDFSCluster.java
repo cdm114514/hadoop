@@ -1720,8 +1720,8 @@ public class MiniDFSCluster {
     }
     String result = bStream.toString();
     //use log.info to make sure the result is printed out
-    LOG.info("errCode from fsck: " + errCode);
-    LOG.info("output from fsck:\n" + result);
+    LOG.info("For Knob Testing: errCode from fsck: " + errCode);
+    LOG.info("For Knob Testing: output from fsck:\n" + result);
 
 
     LOG.info("Shutting down the Mini HDFS Cluster");
